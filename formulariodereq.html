@@ -3,48 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova Requisição - SGPD</title>
+    <title>Dashboard - SGPD</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
         body { background-color: #f3f7fa; display: flex; height: 100vh; color: #1e293b; }
+        
+        /* Sidebar */
         .sidebar { width: 260px; background-color: #1a365d; color: #ffffff; padding: 2rem; position: fixed; height: 100%; }
+        .logo { font-size: 1.5rem; font-weight: 800; margin-bottom: 3rem; display: block; color: white; text-decoration: none; }
+        .nav-item { color: #cbd5e1; text-decoration: none; padding: 0.75rem 1rem; margin-bottom: 0.5rem; border-radius: 0.5rem; display: flex; align-items: center; }
+        .nav-item.active { background-color: #2c5282; color: #ffffff; }
+
+        /* Main Content */
         .main-content { margin-left: 260px; flex: 1; padding: 2rem; }
-        .form-container { background: white; padding: 2.5rem; border-radius: 1rem; border: 1px solid #e2e8f0; max-width: 800px; margin: 0 auto; }
-        .step-indicator { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
-        .step { font-size: 0.875rem; font-weight: 600; color: #94a3b8; }
-        .step.active { color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 0.9rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: #475569; }
-        input, select, textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; font-size: 1rem; }
-        .btn { background: #1a365d; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-weight: 700; cursor: pointer; float: right; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        
+        .section-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1.5rem; }
+        
+        /* Card Styles */
+        .card { background: white; padding: 1.5rem; border-radius: 1rem; border: 1px solid #e2e8f0; width: 400px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .status { padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.75rem; font-weight: 600; background: #fef3c7; color: #92400e; margin-bottom: 1rem; display: inline-block; }
+        
+        /* Botões de Navegação */
+        .button-group { display: flex; gap: 10px; margin-top: 1.5rem; }
+        .btn-nav { 
+            flex: 1;
+            text-align: center;
+            padding: 0.6rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .btn-mapa { background-color: #2c5282; color: white; }
+        .btn-aprovacao { background-color: #16a34a; color: white; }
+        .btn-nav:hover { opacity: 0.9; }
+
     </style>
 </head>
 <body>
-    <nav class="sidebar"><a href="#" style="font-size:1.5rem; font-weight:800; color:white; text-decoration:none">SGPD</a></nav>
+    <nav class="sidebar">
+        <a href="#" class="logo">SGPD</a>
+        <a href="#" class="nav-item active">📊 Dashboard</a>
+        <a href="#" class="nav-item">📝 Requisições</a>
+        <a href="#" class="nav-item">⚖️ Aprovações</a>
+    </nav>
+
     <main class="main-content">
-        <header style="margin-bottom:2rem"><h1>Nova Requisição</h1><p style="color:#64748b">Preencha os dados para iniciar o processo</p></header>
-        <div class="form-container">
-            <div class="step-indicator">
-                <span class="step active">1. Identificação</span>
-                <span class="step">2. Itens</span>
-                <span class="step">3. Anexos</span>
+        <header class="header">
+            <div><h1>Dashboard</h1><p style="color:#64748b">Gerenciamento de Processos</p></div>
+        </header>
+
+        <h2 class="section-title">Aguardando Ação</h2>
+        
+        <div class="card">
+            <p style="font-size:0.8rem; color:#64748b">Prot #402 • Requisição de Papel A4</p>
+            <h3 style="margin: 0.5rem 0">Análise de Cotações</h3>
+            <span class="status">Pendente</span>
+
+            <div class="button-group">
+                <a href="https://ensiebruno.github.io/projeto_UP/mapacomparativo.html" class="btn-nav btn-mapa">
+                    Ver Mapa
+                </a>
+
+                <a href="https://ensiebruno.github.io/projeto_UP/paineldeaprovacao.html" class="btn-nav btn-aprovacao">
+                    Ir para Aprovação
+                </a>
             </div>
-            <div class="form-group">
-                <label>Centro de Custo</label>
-                <select><option>Administrativo - 1020</option><option>TI - 3050</option></select>
-            </div>
-            <div class="form-group">
-                <label>Justificativa da Compra</label>
-                <textarea rows="4" placeholder="Descreva a necessidade deste material..."></textarea>
-            </div>
-            <div class="form-group">
-                <label>Urgência</label>
-                <div style="display:flex; gap:1rem">
-                    <label style="font-weight:400"><input type="radio" name="u" style="width:auto"> Normal</label>
-                    <label style="font-weight:400"><input type="radio" name="u" style="width:auto"> Urgente</label>
-                </div>
-            </div>
-            <button class="btn">Próximo Passo</button>
         </div>
     </main>
 </body>

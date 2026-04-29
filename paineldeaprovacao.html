@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovação Gestor - SGPD</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f3f7fa; padding: 2rem; display: flex; justify-content: center; }
+        .approval-card { background: white; width: 600px; border-radius: 1rem; border: 1px solid #e2e8f0; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .card-header { padding: 1.5rem; border-bottom: 1px solid #e2e8f0; }
+        .card-body { padding: 1.5rem; }
+        .summary-box { background: #f8fafc; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1.5rem; }
+        .summary-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .actions { display: flex; gap: 1rem; margin-top: 2rem; }
+        .btn { flex: 1; padding: 0.75rem; border-radius: 0.5rem; font-weight: 700; cursor: pointer; border: none; }
+        .btn-approve { background: #16a34a; color: white; }
+        .btn-reject { background: #ef4444; color: white; }
+    </style>
+</head>
+<body>
+    <div class="approval-card">
+        <div class="card-header">
+            <h2 style="color:#1a365d">Autorização de Compra</h2>
+            <p style="color:#64748b; font-size:0.875rem">Aguardando seu parecer digital</p>
+        </div>
+        <div class="card-body">
+            <div class="summary-box">
+                <div class="summary-item"><span>Solicitante:</span> <strong>Depto Financeiro</strong></div>
+                <div class="summary-item"><span>Valor Total:</span> <strong>R$ 1.125,00</strong></div>
+                <div class="summary-item"><span>Fornecedor:</span> <strong>Papelaria Silva</strong></div>
+            </div>
+            <p style="font-size:0.875rem; color:#475569; margin-bottom:0.5rem"><strong>Parecer do Comprador:</strong></p>
+            <p style="font-size:0.875rem; color:#64748b; font-style:italic; border-left: 3px solid #cbd5e1; padding-left: 1rem">"Melhor custo-benefício identificado entre 3 orçamentos. Fornecedor com selo de qualidade ativo."</p>
+            
+            <div class="actions">
+                <button class="btn btn-reject">Rejeitar</button>
+                <button class="btn btn-approve">Aprovar Compra</button>
+            </div>
+            <p style="text-align:center; font-size:0.7rem; color:#94a3b8; margin-top:1rem">🔒 Assinado digitalmente por Ricardo Santos</p>
+        </div>
+    </div>
+</body>
+</html>

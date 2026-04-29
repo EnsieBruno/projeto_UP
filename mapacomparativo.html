@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Requisição - SGPD</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f3f7fa; display: flex; height: 100vh; color: #1e293b; }
+        .sidebar { width: 260px; background-color: #1a365d; color: #ffffff; padding: 2rem; position: fixed; height: 100%; }
+        .main-content { margin-left: 260px; flex: 1; padding: 2rem; }
+        .form-container { background: white; padding: 2.5rem; border-radius: 1rem; border: 1px solid #e2e8f0; max-width: 800px; margin: 0 auto; }
+        .step-indicator { display: flex; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+        .step { font-size: 0.875rem; font-weight: 600; color: #94a3b8; }
+        .step.active { color: #1a365d; border-bottom: 2px solid #1a365d; padding-bottom: 0.9rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; color: #475569; }
+        input, select, textarea { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; font-size: 1rem; }
+        .btn { background: #1a365d; color: white; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-weight: 700; cursor: pointer; float: right; }
+    </style>
+</head>
+<body>
+    <nav class="sidebar"><a href="#" style="font-size:1.5rem; font-weight:800; color:white; text-decoration:none">SGPD</a></nav>
+    <main class="main-content">
+        <header style="margin-bottom:2rem"><h1>Nova Requisição</h1><p style="color:#64748b">Preencha os dados para iniciar o processo</p></header>
+        <div class="form-container">
+            <div class="step-indicator">
+                <span class="step active">1. Identificação</span>
+                <span class="step">2. Itens</span>
+                <span class="step">3. Anexos</span>
+            </div>
+            <div class="form-group">
+                <label>Centro de Custo</label>
+                <select><option>Administrativo - 1020</option><option>TI - 3050</option></select>
+            </div>
+            <div class="form-group">
+                <label>Justificativa da Compra</label>
+                <textarea rows="4" placeholder="Descreva a necessidade deste material..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Urgência</label>
+                <div style="display:flex; gap:1rem">
+                    <label style="font-weight:400"><input type="radio" name="u" style="width:auto"> Normal</label>
+                    <label style="font-weight:400"><input type="radio" name="u" style="width:auto"> Urgente</label>
+                </div>
+            </div>
+            <button class="btn">Próximo Passo</button>
+        </div>
+    </main>
+</body>
+</html>
